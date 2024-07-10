@@ -1,3 +1,16 @@
-@for (item of "items"; track item) {
-<app-card />
-}
+<section>
+  <div class="search-container">
+    <input
+      type="text"
+      class="search-input"
+      placeholder="Pesquisar por título ou descrição"
+      [(ngModel)]="searchTerm"
+      (input)="filterItems()"
+    />
+  </div>
+  <div class="cards">
+    @for (card of cardItems; track card) {
+    <app-card [cardItem]="card" [callback]="deletCard" />
+    }
+  </div>
+</section>

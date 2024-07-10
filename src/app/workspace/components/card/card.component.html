@@ -1,1 +1,19 @@
-<p>card works!</p>
+<div class="card">
+  <button class="delete-btn" (click)="callback(cardItem)">&times;</button>
+  <div class="image-container">
+    <img
+      src="{{ cardItem.img }}"
+      alt="{{ cardItem.title }}"
+      class="card-image"
+    />
+    <span class="badge" [ngClass]="getBadgeClass(cardItem.type)">{{
+      cardItem.type
+    }}</span>
+  </div>
+  <h2 class="card-title">{{ cardItem.title }}</h2>
+  <div class="description">
+    <p class="card-description">
+      {{ cardItem.description }}
+    </p>
+  </div>
+</div>
